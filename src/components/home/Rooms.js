@@ -90,7 +90,7 @@ export default function Rooms() {
                       </a>
                       <a
                         className="btn btn-sm btn-dark rounded py-2 px-4"
-                        href="/rooms/booking/dfkjfd"
+                        href={`/rooms/booking/${item._id}`}
                       >
                         {item.darkbtn}
                       </a>
