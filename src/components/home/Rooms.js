@@ -86,14 +86,25 @@ export default function Rooms() {
                         className="btn btn-sm btn-primary rounded py-2 px-4"
                         href=""
                       >
-                        {item.yellowbtn}
+                        Know More..
                       </a>
-                      <a
-                        className="btn btn-sm btn-dark rounded py-2 px-4"
-                        href={`/rooms/booking/${item._id}`}
-                      >
-                        {item.darkbtn}
-                      </a>
+
+                      {item.status === "Book Now" && (
+                        <a
+                          className="btn btn-sm btn-dark rounded py-2 px-4"
+                          href={`/rooms/booking/${item._id}`}
+                        >
+                          {item.status}
+                        </a>
+                      )}
+                      {item.status === "Booked" && (
+                        <button
+                          className="btn btn-sm btn-secondary rounded py-2 px-4"
+                          href=""
+                        >
+                          {item.status}
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>

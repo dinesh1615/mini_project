@@ -22,8 +22,19 @@ mongoose
   .then(() => console.log("MongoDB connected successfully"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
+const roomSchema = new mongoose.Schema({
+  price: String,
+  name: String,
+  rating: String,
+  description: String,
+  status: { type: String, required: true },
+  fromDate: { type: Date, required: true },
+  toDate: { type: Date, required: true },
+  bookedBy: { type: String, required: true },
+});
+
 const User = mongoose.model("user-login", {});
-const Room = mongoose.model("rooms", {});
+const Room = mongoose.model("rooms", roomSchema);
 
 app.get("/", async (req, res) => {
   const username = await User.findOne();
@@ -37,9 +48,21 @@ app.get("/rooms", async (req, res) => {
 
 app.post("/rooms/booking/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
+  // const checkRoomEmpty = await Room.findOne({ _id: `${id}` });
+  // if(!checkRoomEmpty) res.status(400).send("Room Already Booked")
+  // console.log(id);
   const { name, fromDate, toDate } = req.body;
-  await Room.updateOne({ _id: `${id}` }, { $set: { price: "Booked" } })
+  await Room.updateOne(
+    { _id: `${id}` },
+    {
+      $set: {
+        status: "Booked",
+        fromDate: fromDate,
+        toDate: toDate,
+        bookedBy: name,
+      },
+    }
+  )
     .then((result) => {
       console.log(`Modified documents`);
     })
@@ -48,3 +71,26 @@ app.post("/rooms/booking/:id", async (req, res) => {
     });
   res.status(200).send("Booked SuccesFully");
 });
+
+const updateRooms = async () => {
+  try {
+    const presentDate = new Date();
+
+    const result = await Room.updateMany(
+      {
+        status: "Booked",
+        fromDate: { $ne: "" },
+        toDate: { $lte: presentDate },
+      },
+      {
+        $set: { fromDate: "", toDate: "", status: "Boook Now" },
+      }
+    );
+
+    console.log(`Modified ${result.nModified} documents.`);
+  } catch (error) {
+    console.error("Error updating rooms:", error);
+  }
+};
+
+updateRooms();

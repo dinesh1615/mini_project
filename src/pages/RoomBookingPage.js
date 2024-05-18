@@ -20,7 +20,10 @@ const RoomBooking = () => {
   };
 
   const BookNowBtn = async () => {
-    console.log(id);
+    if (!name || !fromDate || !toDate) {
+      alert("Please fill in all fields.");
+      return;
+    }
     const userDetails = {
       name,
       fromDate,
