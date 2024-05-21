@@ -5,6 +5,8 @@ const RoomBooking = () => {
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
   const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [email, setEmail] = useState("");
   const { id } = useParams();
 
   const changeFromDate = (event) => {
@@ -19,15 +21,26 @@ const RoomBooking = () => {
     setName(event.target.value);
   };
 
+  const changeContact = (event) => {
+    setContact(event.target.value);
+  };
+
+  const changeEmail = (event) => {
+    setEmail(event.target.value);
+  };
+
   const BookNowBtn = async () => {
-    if (!name || !fromDate || !toDate) {
+    if (!name || !fromDate || !toDate || !contact || !email) {
       alert("Please fill in all fields.");
       return;
     }
+
     const userDetails = {
       name,
       fromDate,
       toDate,
+      contact,
+      email,
     };
 
     const options = {
@@ -42,7 +55,7 @@ const RoomBooking = () => {
       const response = await fetch(
         `http://localhost:8000/rooms/booking/${id}`,
         options
-      ); // Replace with the actual endpoint
+      );
 
       if (response.ok) {
         alert("Room Booked Successfully");
@@ -52,7 +65,7 @@ const RoomBooking = () => {
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("An error occurred while booking the room.");
+      alert("Already Booked");
     }
   };
 
@@ -63,6 +76,18 @@ const RoomBooking = () => {
         onChange={changeName}
         placeholder="Name"
         value={name}
+      />
+      <input
+        type="number"
+        placeholder="Contact"
+        onChange={changeContact}
+        value={contact}
+      />
+      <input
+        type="email"
+        placeholder="Email"
+        onChange={changeEmail}
+        value={email}
       />
       <input type="date" onChange={changeFromDate} value={fromDate} />
       <input type="date" onChange={changeToDate} value={toDate} />

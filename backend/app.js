@@ -31,6 +31,8 @@ const roomSchema = new mongoose.Schema({
   fromDate: { type: Date, required: true },
   toDate: { type: Date, required: true },
   bookedBy: { type: String, required: true },
+  email: { type: String, required: true },
+  contact: { type: Number, required: true },
 });
 
 const User = mongoose.model("user-login", {});
@@ -51,25 +53,28 @@ app.post("/rooms/booking/:id", async (req, res) => {
   // const checkRoomEmpty = await Room.findOne({ _id: `${id}` });
   // if(!checkRoomEmpty) res.status(400).send("Room Already Booked")
   // console.log(id);
-  const { name, fromDate, toDate } = req.body;
+  const { name, fromDate, toDate, email, contact } = req.body;
   await Room.updateOne(
-    { _id: `${id}` },
+    { $and: [{ _id: `${id}` }, { status: "Book Now" }] },
     {
       $set: {
         status: "Booked",
         fromDate: fromDate,
         toDate: toDate,
         bookedBy: name,
+        email: email,
+        contact: contact,
       },
     }
   )
     .then((result) => {
       console.log(`Modified documents`);
+      res.status(200).send("Booked SuccesFully");
     })
     .catch((error) => {
       console.error("Error updating documents:", error);
+      res.status(400).send("Failed To Book");
     });
-  res.status(200).send("Booked SuccesFully");
 });
 
 const updateRooms = async () => {
