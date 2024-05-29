@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
       <div
-        className="container-fluid bg-dark text-light footer wow fadeIn"
+        className="container-fluid bg-dark text-light footer wow fadeIn mt-5"
         data-wow-delay="0.1s"
       >
         <div className="container pb-5">
