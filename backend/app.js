@@ -48,11 +48,18 @@ app.get("/rooms", async (req, res) => {
   res.status(200).send(roomDetails);
 });
 
+app.post("/rooms", async (req, res) => {
+  const { fromDate, toDate } = req.body;
+  const roomDetails = await Room.find({
+    toDate: { $lt: fromDate },
+  });
+  console.log(roomDetails);
+  if (roomDetails.length === 0) return res.status(400).send("ndf");
+  else return res.status(200).send("kdf");
+});
+
 app.post("/rooms/booking/:id", async (req, res) => {
   const { id } = req.params;
-  // const checkRoomEmpty = await Room.findOne({ _id: `${id}` });
-  // if(!checkRoomEmpty) res.status(400).send("Room Already Booked")
-  // console.log(id);
   const { name, fromDate, toDate, email, contact } = req.body;
   await Room.updateOne(
     { $and: [{ _id: `${id}` }, { status: "Book Now" }] },
@@ -88,7 +95,7 @@ const updateRooms = async () => {
         toDate: { $lte: presentDate },
       },
       {
-        $set: { fromDate: "", toDate: "", status: "Boook Now" },
+        $set: { fromDate: "", toDate: "", status: "Book Now" },
       }
     );
 

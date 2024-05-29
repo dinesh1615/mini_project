@@ -1,6 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Book() {
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
+
+  const updateInDate = (event) => setCheckInDate(event.target.value);
+  const updateOutDate = (event) => setCheckOutDate(event.target.value);
+
+  const isAvailable = async () => {
+    const data = {
+      fromDate: checkInDate,
+      toDate: checkOutDate,
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+    const response = await fetch("http://localhost:8000/rooms/", options);
+    if (response.ok) {
+      alert("Available");
+    } else alert("NOT Available");
+  };
+
   return (
     <>
       <div
@@ -13,24 +37,34 @@ export default function Book() {
               <div className="col-md-10">
                 <div className="row g-2">
                   <div className="col-md-3">
-                    <div className="date" id="date1" data-target-input="nearest">
+                    <div
+                      className="date"
+                      id="date1"
+                      data-target-input="nearest"
+                    >
                       <input
-                        type="text"
+                        type="date"
                         className="form-control datetimepicker-input"
                         placeholder="Check in"
                         data-target="#date1"
                         data-toggle="datetimepicker"
+                        onChange={updateInDate}
                       />
                     </div>
                   </div>
                   <div className="col-md-3">
-                    <div className="date" id="date2" data-target-input="nearest">
+                    <div
+                      className="date"
+                      id="date2"
+                      data-target-input="nearest"
+                    >
                       <input
-                        type="text"
+                        type="date"
                         className="form-control datetimepicker-input"
                         placeholder="Check out"
                         data-target="#date2"
                         data-toggle="datetimepicker"
+                        onChange={updateOutDate}
                       />
                     </div>
                   </div>
@@ -53,7 +87,9 @@ export default function Book() {
                 </div>
               </div>
               <div className="col-md-2">
-                <button className="btn btn-primary w-100">Submit</button>
+                <button className="btn btn-primary w-100" onClick={isAvailable}>
+                  Submit
+                </button>
               </div>
             </div>
           </div>
