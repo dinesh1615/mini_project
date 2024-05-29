@@ -19,6 +19,7 @@ import {
 } from "./pages/index";
 import Footer from "./components/common/Footer";
 import RoomBooking from "./pages/RoomBookingPage";
+import Food from "./food";
 export default function App() {
   return (
     <>
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/rooms" element={<Room />} />
             <Route path="/services" element={<Services />} />
             <Route path="/rooms/booking/:id" element={<RoomBooking />} />
+            <Route path="/food" element={<Food />} />
           </Routes>
           <Footer />
         </Router>
