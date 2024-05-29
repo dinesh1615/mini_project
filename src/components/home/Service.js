@@ -20,7 +20,7 @@ export default function Services() {
                 className="col-lg-4 col-md-6 wow fadeInUp"
                 data-wow-delay="0.1s"
               >
-                <a className="service-item rounded" href="/food">
+                <a className="service-item rounded" href={item.go}>
                   <div className="service-icon bg-transparent border rounded p-1">
                     <div className="w-100 h-100 border rounded d-flex align-items-center justify-content-center">
                       {item.icon}

@@ -1,5 +1,4 @@
 import React from "react";
-import Heading from "../common/Heading";
 import { about } from "../data/Data";
 
 export default function About() {
@@ -17,8 +16,8 @@ export default function About() {
                 <span className="text-primary text-uppercase">Hotelname</span>
               </h1>
               <p className="mb-4">
-                Some of the data or information is given here about the Hotelname
-                it is a good rated hotel.
+                Some of the data or information is given here about the
+                Hotelname it is a good rated hotel.
               </p>
               <div className="row g-3 pb-4">
                 {about.map((item, key) => (

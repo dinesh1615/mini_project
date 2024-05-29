@@ -5,7 +5,6 @@ import Newsletter from "../home/Newsletter";
 export default function Footer() {
   return (
     <>
-      <Newsletter />
       <div
         className="container-fluid bg-dark text-light footer wow fadeIn"
         data-wow-delay="0.1s"
@@ -17,9 +16,7 @@ export default function Footer() {
                 <Link to="/">
                   <h1 className="text-white text-uppercase mb-3">Hotelname</h1>
                 </Link>
-                <p className="text-white mb-0">
-                 Description
-                </p>
+                <p className="text-white mb-0">Description</p>
               </div>
             </div>
             <div className="col-md-6 col-lg-3">

@@ -1,6 +1,5 @@
 import React from "react";
 import { socialIcons, team } from "../data/Data";
-import { Link } from "react-router-dom";
 import CommonHeading from "../common/CommonHeading";
 
 export default function Teams() {

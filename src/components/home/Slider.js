@@ -33,6 +33,7 @@ export default function Sliders() {
                       className="img-fluid flex-shrink-0 rounded"
                       src={item.img}
                       style={{ width: "45px", height: "45px" }}
+                      alt="image"
                     />
                     <div className="ps-3">
                       <h6 className="fw-bold mb-1">{item.name}</h6>

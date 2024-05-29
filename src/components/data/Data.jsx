@@ -21,25 +21,8 @@ export const navList = [
   },
   {
     id: 5,
-    path: "/page",
-    text: "Page",
-    subItems: [
-      {
-        id: 51,
-        path: "/booking",
-        text: "Booking",
-      },
-      {
-        id: 52,
-        path: "/team",
-        text: "Our Team",
-      },
-      /*{
-        id: 53,
-        path: "/testimonial",
-        text: "Testimonial",
-      },*/
-    ],
+    path: "/team",
+    text: "Our Team",
   },
   {
     id: 6,
@@ -104,33 +87,39 @@ export const services = [
     icon: <i class="fa fa-hotel fa-2x text-primary"></i>,
     name: "Rooms & Appartment",
     discription: "Description",
+    go: "/rooms",
   },
   {
     icon: <i class="fa fa-utensils fa-2x text-primary"></i>,
     name: "Food & Restaurant",
     discription: "Description",
+    go: "/food",
   },
   {
     icon: <i class="fa fa-spa fa-2x text-primary"></i>,
     name: "Fitness",
     discription: "Description",
+    go: "/",
   },
 
   {
     icon: <i class="fa fa-swimmer fa-2x text-primary"></i>,
     name: "Sports & Gaming",
     discription: "Description",
+    go: "/",
   },
   {
     icon: <i class="fa fa-glass-cheers fa-2x text-primary"></i>,
     name: "Event & Party",
     discription: "Description",
+    go: "/",
   },
 
   {
     icon: <i class="fa fa-dumbbell fa-2x text-primary"></i>,
     name: "GYM & Yoga",
     discription: "Description",
+    go: "/",
   },
 ];
 export const team = [
@@ -235,8 +224,7 @@ export const contact = [
 ];
 export const testimonial = [
   {
-    description:
-      "some decription",
+    description: "some decription",
     name: "Client Name",
     profession: "Profession",
     icon: (
@@ -245,8 +233,7 @@ export const testimonial = [
     img: "../assets/img/testimonial-1.jpg",
   },
   {
-    description:
-      "some decription",
+    description: "some decription",
     name: "Client Name",
     profession: "Profession",
     icon: (
@@ -255,8 +242,7 @@ export const testimonial = [
     img: "../assets/img/testimonial-2.jpg",
   },
   {
-    description:
-      "some decription",
+    description: "some decription",
     name: "Client Name",
     profession: "Profession",
     icon: (
@@ -278,8 +264,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -295,8 +280,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -311,8 +295,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -327,8 +310,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -344,8 +326,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -360,8 +341,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -376,8 +356,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -393,8 +372,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
@@ -409,8 +387,7 @@ export const roomItems = [
       <small class="fa fa-star text-primary"></small>,
       <small class="fa fa-star text-primary"></small>,
     ],
-    description:
-      "Description",
+    description: "Description",
     yellowbtn: "View Detail",
     darkbtn: "book now",
   },
