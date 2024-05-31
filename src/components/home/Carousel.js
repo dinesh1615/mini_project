@@ -48,7 +48,7 @@ export default function Carousel() {
                         {val.title}
                       </h1>
                       <a
-                        href="/room"
+                        href="/rooms"
                         className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                       >
                         {val.btn2}
