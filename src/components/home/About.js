@@ -13,11 +13,11 @@ export default function About() {
               </h6>
               <h1 className="mb-4">
                 Welcome to{" "}
-                <span className="text-primary text-uppercase">Hotelname</span>
+                <span className="text-primary text-uppercase">STAR NIVAS HOTEL</span>
               </h1>
               <p className="mb-4">
-                Some of the data or information is given here about the
-                Hotelname it is a good rated hotel.
+              It is popular for its serene environment, warm hospitality, 
+              and excellent vegetarian restaurant​.
               </p>
               <div className="row g-3 pb-4">
                 {about.map((item, key) => (

@@ -22,7 +22,7 @@ export const navList = [
   {
     id: 5,
     path: "/team",
-    text: "Our Team",
+    text: " OurTeam",
   },
   {
     id: 6,
@@ -96,62 +96,62 @@ export const services = [
   {
     icon: <i class="fa fa-hotel fa-2x text-primary"></i>,
     name: "Rooms & Appartment",
-    discription: "Description",
+    discription: "Your Dream Space, Redefined.",
     go: "/rooms",
   },
   {
     icon: <i class="fa fa-utensils fa-2x text-primary"></i>,
     name: "Food & Restaurant",
-    discription: "Description",
+    discription: "Savor the Flavor, Relish the Moment.",
     go: "/food",
   },
   {
     icon: <i class="fa fa-spa fa-2x text-primary"></i>,
-    name: "Fitness",
-    discription: "Description",
+    name: "Spa & Fitness",
+    discription: "Revitalize Your Body, Renew Your Mind.",
     go: "/",
   },
 
   {
     icon: <i class="fa fa-swimmer fa-2x text-primary"></i>,
     name: "Sports & Gaming",
-    discription: "Description",
+    discription: "Unleash Your Competitive Edge.",
     go: "/",
   },
   {
     icon: <i class="fa fa-glass-cheers fa-2x text-primary"></i>,
     name: "Event & Party",
-    discription: "Description",
+    discription: "Unforgettable Moments, Perfectly Crafted.",
     go: "/",
   },
 
   {
     icon: <i class="fa fa-dumbbell fa-2x text-primary"></i>,
     name: "GYM & Yoga",
-    discription: "Description",
+    discription: "Strengthen Your Body, Soothe Your Mind.",
     go: "/",
   },
 ];
 export const team = [
   {
-    image: "../assets/img/download.jpeg",
-    name: "Full Name",
-    designation: "Designation",
+    image: "../assets/img/d2.jpg",
+    name: "Dinesh",
+    designation: "Front Office Manager",
   },
   {
-    image: "../assets/img/download.jpeg",
-    name: "Full Name",
-    designation: "Designation",
+    image: "../assets/img/d3.jpg",
+    name: "Nithin",
+    designation: "Executive Chef",
   },
   {
-    image: "../assets/img/download.jpeg",
-    name: "Full Name",
-    designation: "Designation",
+    image: "../assets/img/d4.jpg",
+    name: "Shivani",
+    designation: "Housekeeping Supervisor",
   },
   {
-    image: "../assets/img/download.jpeg",
-    name: "Full Name",
-    designation: "Designation",
+    image: "../assets/img/d1.jpg",
+    name: "Sravanth",
+    designation: "General Manager",
   },
 ];
 
@@ -211,7 +211,7 @@ export const footerContact = [
   },
   {
     icon: <i className="fa fa-envelope me-3"></i>,
-    name: "info@example.com",
+    name: "info@gmail.com",
   },
 ];
 
@@ -219,42 +219,42 @@ export const contact = [
   {
     icon: <i class="fa fa-envelope-open text-primary me-2"></i>,
     title: "Booking",
-    email: "book@example.com",
+    email: "book@gmail.com",
   },
   {
     icon: <i class="fa fa-envelope-open text-primary me-2"></i>,
     title: "Technical",
-    email: "tech@example.com",
+    email: "tech@gmail.com",
   },
   {
     icon: <i class="fa fa-envelope-open text-primary me-2"></i>,
     title: "General",
-    email: "info@example.com",
+    email: "info@gmail.com",
   },
 ];
 export const testimonial = [
   {
-    description: "some decription",
-    name: "Client Name",
-    profession: "Profession",
+    description: "The serene ambiance and top-notch service at the hotel make it the perfect place to unwind after a hectic schedule.",
+    name: "Dr. Anjali Mehra",
+    profession: "Cardiologist",
     icon: (
       <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
     ),
     img: "../assets/img/testimonial-1.jpg",
   },
   {
-    description: "some decription",
-    name: "Client Name",
-    profession: "Profession",
+    description: "The hotel's conference facilities and attentive staff have made my business trips smooth and productive.",
+    name: "Mr. Rajesh Patel",
+    profession: "Business Executive",
     icon: (
       <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
     ),
     img: "../assets/img/testimonial-2.jpg",
   },
   {
-    description: "some decription",
-    name: "Client Name",
-    profession: "Profession",
+    description: "I love the elegant decor and the attention to detail that make every stay a luxurious experience.",
+    name: "Mr. Shathin Kapoor",
+    profession: "Fashion Designer",
     icon: (
       <i class="fa fa-quote-right fa-3x text-primary position-absolute end-0 bottom-0 me-4 mb-n1"></i>
     ),

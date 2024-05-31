@@ -80,12 +80,12 @@ export default function Rooms() {
                     </div> */}
                     <p className="text-body mb-3">{item.description}</p>
                     <div className="d-flex justify-content-between">
-                      <a
+                      {/* <a
                         className="btn btn-sm btn-primary rounded py-2 px-4"
                         href=""
                       >
                         Know More..
-                      </a>
+                      </a> */}
 
                       {item.status === "Book Now" && (
                         <a

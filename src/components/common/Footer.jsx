@@ -14,9 +14,9 @@ export default function Footer() {
             <div className="col-md-6 col-lg-4">
               <div className="bg-primary rounded p-4">
                 <Link to="/">
-                  <h1 className="text-white text-uppercase mb-3">Hotelname</h1>
+                  <h1 className="text-white text-uppercase mb-3">STAR NIVAS HOTEL</h1>
                 </Link>
-                <p className="text-white mb-0">Description</p>
+                <p className="text-white mb-0"> It is popular for its serene environment, warm hospitality, and excellent vegetarian restaurant​ </p>
               </div>
             </div>
             <div className="col-md-6 col-lg-3">
