@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
 import FirstPage from "./FirstPage";
 import Products from "./Products";
 import { GlobalStyle } from "./GlobalStyles";

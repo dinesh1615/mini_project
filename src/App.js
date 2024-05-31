@@ -20,6 +20,9 @@ import {
 import Footer from "./components/common/Footer";
 import RoomBooking from "./pages/RoomBookingPage";
 import Food from "./food";
+import ExploreAbout from "./components/home/ExploreAbout";
+import Login from "./components/home/Login";
+import Queries from "./pages/Queries";
 export default function App() {
   return (
     <>
@@ -38,6 +41,9 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/rooms/booking/:id" element={<RoomBooking />} />
             <Route path="/food" element={<Food />} />
+            <Route path="/about/explore-more" element={<ExploreAbout />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/queries" element={<Queries />} />
           </Routes>
           <Footer />
         </Router>

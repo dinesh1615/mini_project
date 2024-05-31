@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
+import React, { useState } from "react";
+import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
 import {
   FirstPageContainer,
   FirstPageContent,
   FirstPageItems,
   FirstPageH1,
   FirstPageP,
-  FirstPageBtn
-} from './FirstPageElements';
+  FirstPageBtn,
+} from "./FirstPageElements";
 
 const FirstPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +25,7 @@ const FirstPage = () => {
         <FirstPageItems>
           <FirstPageH1>Best Arabic Cuisine</FirstPageH1>
           <FirstPageP>Taste of the Middle East</FirstPageP>
-          <FirstPageBtn>Place Order</FirstPageBtn>
+          <FirstPageBtn>Call Now</FirstPageBtn>
         </FirstPageItems>
       </FirstPageContent>
     </FirstPageContainer>

@@ -29,6 +29,16 @@ export const navList = [
     path: "/contact",
     text: "Contact",
   },
+  {
+    id: 7,
+    path: "/login",
+    text: "Login",
+  },
+  {
+    id: 8,
+    path: "/queries",
+    text: "Queries",
+  },
 ];
 export const socialIcons = [
   {

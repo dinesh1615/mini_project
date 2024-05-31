@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   ProductsContainer,
   ProductWrapper,
@@ -9,8 +9,8 @@ import {
   ProductInfo,
   ProductDesc,
   ProductPrice,
-  ProductButton
-} from './ProductsElements';
+  ProductButton,
+} from "./ProductsElements";
 
 const Products = ({ heading, data }) => {
   return (
@@ -25,7 +25,6 @@ const Products = ({ heading, data }) => {
                 <ProductTitle>{product.name}</ProductTitle>
                 <ProductDesc>{product.desc}</ProductDesc>
                 <ProductPrice>{product.price}</ProductPrice>
-                <ProductButton>{product.button}</ProductButton>
               </ProductInfo>
             </ProductCard>
           );
