@@ -91,7 +91,7 @@ app.get("/rooms", async (req, res) => {
 app.post("/rooms", async (req, res) => {
   const { fromDate, toDate } = req.body;
   const roomDetails = await Room.find({
-    toDate: { $lt: fromDate },
+    status: "Booked",
   });
   console.log(roomDetails);
   if (roomDetails.length === 0) return res.status(400).send("Not Available");
