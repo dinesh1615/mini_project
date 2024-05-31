@@ -67,10 +67,8 @@ app.post("/login", async (req, res) => {
       username: username,
     };
     const jwtToken = jwt.sign(payload, "Nithin");
-    console.log(jwtToken);
     res.status(201).send({ jwtToken });
   } catch (error) {
-    console.error("Error logging in:", error);
     res.status(500).send("Internal Server Error");
   }
 });
@@ -90,18 +88,37 @@ app.get("/rooms", async (req, res) => {
 //Is Rooms Available or Not
 app.post("/rooms", async (req, res) => {
   const { fromDate, toDate } = req.body;
-  const roomDetails = await Room.find({
-    status: "Booked",
-  });
-  console.log(roomDetails);
-  if (roomDetails.length === 0) return res.status(400).send("Not Available");
-  else return res.status(200).send("Available");
+
+  if (!fromDate || !toDate) {
+    return res
+      .status(400)
+      .send("Invalid request: fromDate and toDate are required.");
+  }
+
+  try {
+    const roomDetails = await Room.find({
+      $or: [{ status: "Book Now" }, { toDate: { $lte: fromDate } }],
+    });
+
+    if (roomDetails.length !== 0) {
+      return res.status(200).send("Available");
+    } else {
+      return res.status(400).send("Not Available");
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).send("Server error");
+  }
 });
 
 //Room Booking API
 app.post("/rooms/booking/:id", async (req, res) => {
   const { id } = req.params;
   const { name, fromDate, toDate, email, contact } = req.body;
+  const isThere = await Room.find({
+    status: "Book Now",
+  });
+  if (isThere.length === 0) res.status(200).send("NOT Available..");
   await Room.updateOne(
     { $and: [{ _id: `${id}` }, { status: "Book Now" }] },
     {
@@ -116,11 +133,9 @@ app.post("/rooms/booking/:id", async (req, res) => {
     }
   )
     .then((result) => {
-      console.log(`Modified documents`);
       res.status(200).send("Booked SuccesFully");
     })
     .catch((error) => {
-      console.error("Error updating documents:", error);
       res.status(400).send("Failed To Book");
     });
 });
@@ -140,8 +155,6 @@ const updateRooms = async () => {
         $set: { fromDate: "", toDate: "", status: "Book Now" },
       }
     );
-
-    console.log(`Modified ${result.nModified} documents.`);
   } catch (error) {
     console.error("Error updating rooms:", error);
   }
@@ -163,7 +176,6 @@ app.post("/queries", async (req, res) => {
     await newQuery.save();
     return res.status(200).send("Inserted Successfully");
   } catch (error) {
-    console.error("Error while inserting:", error);
     return res.status(500).send("Error while inserting.");
   }
 });

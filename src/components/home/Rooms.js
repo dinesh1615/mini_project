@@ -22,8 +22,6 @@ export default function Rooms() {
     }
   };
 
-  console.log(roomItems);
-
   return (
     <>
       <div className="container-xxl py-5">
