@@ -33,9 +33,9 @@ const ExploreAbout = () => {
       <section style={{ margin: '20px 0' }}>
         <h2>Gallery</h2>
         <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-          <img src="assets/img/hotel-exterior.jpg" alt="Hotel Exterior" style= {{ width: '30%', marginBottom: '20px' }} />
-          <img src="assets/img/hotel-room.jpg" alt="Hotel Room" style={{ width: '30%', marginBottom: '20px' }} />
-          <img src="assets/img/hotel-restaurant.jpg" alt="Hotel Restaurant" style={{ width: '30%', marginBottom: '20px' }} />
+          <img src="/assets/img/hotel-exterior.jpg" alt="Hotel Exterior" style= {{ width: '30%', marginBottom: '20px' }} />
+          <img src="/assets/img/hotel-room.jpg" alt="Hotel Room" style={{ width: '30%', marginBottom: '20px' }} />
+          <img src="/assets/img/hotel-restaurant.jpg" alt="Hotel Restaurant" style={{ width: '30%', marginBottom: '20px' }} />
         </div>
       </section>
 

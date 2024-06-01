@@ -40,24 +40,66 @@ export default function Rooms() {
               >
                 <div className="room-item shadow rounded overflow-hidden">
                   <div className="position-relative">
-                    {item.price === "10,000/night" && (
+                    {item.price === "900/night" && (
                       <img
                         className="img-fluid"
                         src="../assets/img/room-1.jpg"
                         alt="img"
                       />
                     )}
-                    {item.price === "15,000/night" && (
+                    {item.price === "1,500/night" && (
                       <img
                         className="img-fluid"
                         src="../assets/img/room-2.jpg"
                         alt="img"
                       />
                     )}
-                    {item.price === "20,000/night" && (
+                    {item.price === "1,000/night" && (
                       <img
                         className="img-fluid"
                         src="../assets/img/room-3.jpg"
+                        alt="img"
+                      />
+                    )}
+                    {item.price === "800/night" && (
+                      <img
+                        className="img-fluid"
+                        src="../assets/img/room-8.jpg"
+                        alt="img"
+                      />
+                    )}
+                    {item.price === "1,200/night" && (
+                      <img
+                        className="img-fluid"
+                        src="../assets/img/room-4.jpg"
+                        alt="img"
+                      />
+                    )}
+                    {item.price === "1,300/night" && (
+                      <img
+                        className="img-fluid"
+                        src="../assets/img/room-5.jpg"
+                        alt="img"
+                      />
+                    )}
+                    {item.price === "1,100/night" && (
+                      <img
+                        className="img-fluid"
+                        src="../assets/img/room-11.jpg"
+                        alt="img"
+                      />
+                    )}
+                    {item.price === "1,400/night" && (
+                      <img
+                        className="img-fluid"
+                        src="../assets/img/room-10.jpg"
+                        alt="img"
+                      />
+                    )}
+                    {item.price === "2,000/night" && (
+                      <img
+                        className="img-fluid"
+                        src="../assets/img/room-9.jpg"
                         alt="img"
                       />
                     )}
@@ -79,6 +121,7 @@ export default function Rooms() {
                       ))}
                     </div> */}
                     <p className="text-body mb-3">{item.description}</p>
+                    
                     <div className="d-flex justify-content-between">
                       {/* <a
                         className="btn btn-sm btn-primary rounded py-2 px-4"
@@ -88,12 +131,16 @@ export default function Rooms() {
                       </a> */}
 
                       {item.status === "Book Now" && (
+                        <div>
+                          <p>Rating:{item.rating}</p>
                         <a
                           className="btn btn-sm btn-dark rounded py-2 px-4"
                           href={`/rooms/booking/${item._id}`}
                         >
                           {item.status}
+                          
                         </a>
+                        </div>
                       )}
                       {item.status === "Booked" && (
                         <button
