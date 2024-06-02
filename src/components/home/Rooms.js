@@ -1,8 +1,11 @@
+
 import React, { useEffect, useState } from "react";
 import CommonHeading from "../common/CommonHeading";
+import { useNavigate } from "react-router-dom";
 
 export default function Rooms() {
   const [roomItems, setRoomItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     getRoomItems();
@@ -20,6 +23,10 @@ export default function Rooms() {
     } catch (error) {
       console.error("Error fetching room items:", error);
     }
+  };
+
+  const handleBooking = (id, price) => {
+    navigate(`/rooms/booking/${id}`, { state: { price } });
   };
 
   return (
@@ -40,7 +47,7 @@ export default function Rooms() {
               >
                 <div className="room-item shadow rounded overflow-hidden">
                   <div className="position-relative">
-                    {item.price === "900/night" && (
+                  {item.price === "900/night" && (
                       <img
                         className="img-fluid"
                         src="../assets/img/room-1.jpg"
@@ -103,6 +110,7 @@ export default function Rooms() {
                         alt="img"
                       />
                     )}
+                   
                     <small className="position-absolute start-0 top-100 translate-middle-y bg-primary text-white rounded py-1 px-3 ms-4">
                       {item.price}
                     </small>
@@ -112,34 +120,17 @@ export default function Rooms() {
                       <h5 className="mb-0">{item.name}</h5>
                       <div className="ps-2">{item.star}</div>
                     </div>
-                    {/* <div className="d-flex mb-3">
-                      {item.facility.map((facilityItem, index) => (
-                        <small key={index} className="border-end me-3 pe-3">
-                          {facilityItem.icon}
-                          {facilityItem.quantity} {facilityItem.facility}
-                        </small>
-                      ))}
-                    </div> */}
                     <p className="text-body mb-3">{item.description}</p>
-                    
                     <div className="d-flex justify-content-between">
-                      {/* <a
-                        className="btn btn-sm btn-primary rounded py-2 px-4"
-                        href=""
-                      >
-                        Know More..
-                      </a> */}
-
                       {item.status === "Book Now" && (
                         <div>
                           <p>Rating:{item.rating}</p>
-                        <a
-                          className="btn btn-sm btn-dark rounded py-2 px-4"
-                          href={`/rooms/booking/${item._id}`}
-                        >
-                          {item.status}
-                          
-                        </a>
+                          <button
+                            className="btn btn-sm btn-dark rounded py-2 px-4"
+                            onClick={() => handleBooking(item._id, item.price)}
+                          >
+                            {item.status}
+                          </button>
                         </div>
                       )}
                       {item.status === "Booked" && (
@@ -161,3 +152,4 @@ export default function Rooms() {
     </>
   );
 }
+

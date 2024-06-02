@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+
+import React, { useState, useEffect } from "react";
+import { useParams, useLocation } from "react-router-dom";
 
 const RoomBooking = () => {
   const [fromDate, setFromDate] = useState("");
@@ -7,7 +8,24 @@ const RoomBooking = () => {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [email, setEmail] = useState("");
+  const [price, setPrice] = useState(0);
   const { id } = useParams();
+  const location = useLocation();
+  const roomRate = location.state.price ? parseFloat(location.state.price.replace(/[^0-9.-]+/g,"")) : 100; // Extract numeric value
+
+  const calculatePrice = () => {
+    if (fromDate && toDate) {
+      const from = new Date(fromDate);
+      const to = new Date(toDate);
+      const timeDiff = to - from;
+      const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      setPrice(daysDiff * roomRate);
+    }
+  };
+
+  useEffect(() => {
+    calculatePrice();
+  }, [fromDate, toDate]);
 
   const changeFromDate = (event) => {
     setFromDate(event.target.value);
@@ -91,6 +109,7 @@ const RoomBooking = () => {
       />
       <input type="date" onChange={changeFromDate} value={fromDate} />
       <input type="date" onChange={changeToDate} value={toDate} />
+      <div>Total Price: ${price}</div>
       <button type="button" onClick={BookNowBtn}>
         Submit
       </button>
@@ -99,3 +118,4 @@ const RoomBooking = () => {
 };
 
 export default RoomBooking;
+
