@@ -33,10 +33,12 @@ export default function Book() {
       >
         <div className="container">
           <div className="bg-white shadow" style={{ padding: "35px" }}>
+          <blockquote style={{color:"orange"}}>ROOMS AVAILABILIY CHECK</blockquote>
             <div className="row g-2">
               <div className="col-md-10">
                 <div className="row g-2">
                   <div className="col-md-3">
+                  
                     <div
                       className="date"
                       id="date1"
