@@ -19,7 +19,7 @@ const RoomBooking = () => {
       const to = new Date(toDate);
       const timeDiff = to - from;
       const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      setPrice(daysDiff * roomRate);
+      setPrice((daysDiff+1) * roomRate);
     }
   };
 
@@ -88,7 +88,7 @@ const RoomBooking = () => {
   };
 
   return (
-    <div className="d-flex flex-column justify-content-center">
+    <div className="d-flex flex-column justify-content-center" >
       <input
         type="text"
         onChange={changeName}
