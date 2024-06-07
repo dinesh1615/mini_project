@@ -197,8 +197,8 @@ app.get("/queries", async (req, res) => {
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "nithinambati9@gmail.com",
-    pass: "nshv cokv qdpw pdzi",
+    user: "mdinesh3026@gmail.com",
+    pass: "nvhw oxjq uyum sdts",
   },
 });
 
