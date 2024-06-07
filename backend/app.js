@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+const nodemailer = require("nodemailer");
 
 const app = express();
 app.use(express.json());
@@ -132,7 +133,8 @@ app.post("/rooms/booking/:id", async (req, res) => {
       },
     }
   )
-    .then((result) => {
+    .then(async (result) => {
+      await sendEmail(email, fromDate, toDate, id);
       res.status(200).send("Booked SuccesFully");
     })
     .catch((error) => {
@@ -189,3 +191,30 @@ app.get("/queries", async (req, res) => {
     res.status(400).send("Error");
   }
 });
+
+//Send Email
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: "nithinambati9@gmail.com",
+    pass: "nshv cokv qdpw pdzi",
+  },
+});
+
+const sendEmail = (email, fromDate, toDate, id) => {
+  const mailOptions = {
+    from: process.env.EMAIL_USER,
+    to: email,
+    subject: "STAR-NIVAS",
+    text: `Room with roomId: ${id} has been successfully Booked from ${fromDate} to ${toDate}.
+    Amount Paid..`,
+  };
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      return res.status(500).send({ message: "Error sending email", error });
+    }
+    res.status(200).send({ message: "Msg Sent sucesfully" });
+  });
+};
