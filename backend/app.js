@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
@@ -9,14 +11,14 @@ app.use(express.json());
 app.use(cors());
 
 const startServer = () => {
-  app.listen(8000, () => {
-    console.log("server running on port no: 8000...");
+  app.listen(process.env.PORT, () => {
+    console.log(`server running on port no:${process.env.PORT}...`);
   });
 };
 
 startServer();
 
-const dbURI = "mongodb://localhost:27017/hotelManagement";
+const dbURI = process.env.MONGO_URL;
 
 mongoose
   .connect(dbURI)
