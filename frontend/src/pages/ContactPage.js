@@ -19,7 +19,7 @@ export default function Contact() {
 
   const submitBtn = async (event) => {
     event.preventDefault();
-    const url = "http://localhost:8000/queries";
+    const url = "https://node-js-ten-delta.vercel.app/queries";
     const userDetails = {
       name,
       email,

@@ -19,7 +19,10 @@ export default function Book() {
       },
       body: JSON.stringify(data),
     };
-    const response = await fetch("http://localhost:8000/rooms/", options);
+    const response = await fetch(
+      "https://node-js-ten-delta.vercel.app/rooms/",
+      options
+    );
     if (response.ok) {
       alert("Available");
     } else alert("NOT Available");
@@ -33,12 +36,13 @@ export default function Book() {
       >
         <div className="container">
           <div className="bg-white shadow" style={{ padding: "35px" }}>
-          <blockquote style={{color:"orange"}}>ROOMS AVAILABILIY CHECK</blockquote>
+            <blockquote style={{ color: "orange" }}>
+              ROOMS AVAILABILIY CHECK
+            </blockquote>
             <div className="row g-2">
               <div className="col-md-10">
                 <div className="row g-2">
                   <div className="col-md-3">
-                  
                     <div
                       className="date"
                       id="date1"

@@ -73,7 +73,7 @@ const RoomBooking = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:8000/rooms/booking/${id}`,
+        `https://node-js-ten-delta.vercel.app/rooms/booking/${id}`,
         options
       );
 

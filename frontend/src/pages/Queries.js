@@ -8,7 +8,9 @@ const Queries = () => {
   useEffect(() => {
     const fetchQueries = async () => {
       try {
-        const response = await fetch("http://localhost:8000/queries"); // Adjust the URL to match your backend endpoint
+        const response = await fetch(
+          "https://node-js-ten-delta.vercel.app/queries"
+        ); // Adjust the URL to match your backend endpoint
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }

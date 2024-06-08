@@ -12,7 +12,9 @@ export default function Rooms() {
 
   const getRoomItems = async () => {
     try {
-      const response = await fetch("http://localhost:8000/rooms/");
+      const response = await fetch(
+        "https://node-js-ten-delta.vercel.app/rooms/"
+      );
       if (response.ok) {
         const data = await response.json();
         setRoomItems(data);
