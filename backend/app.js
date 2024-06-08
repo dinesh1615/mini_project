@@ -6,19 +6,23 @@ const cors = require("cors");
 const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 
+const MONGO_URL =
+  "mongodb+srv://hotel_booking:starnivas123@cluster0.9qpuxmc.mongodb.net/hotel_booking?retryWrites=true&w=majority";
+const PORT = 8000;
+
 const app = express();
 app.use(express.json());
 app.use(cors());
 
 const startServer = () => {
-  app.listen(process.env.PORT, () => {
-    console.log(`server running on port no:${process.env.PORT}...`);
+  app.listen(PORT, () => {
+    console.log(`server running on port no:${PORT}...`);
   });
 };
 
 startServer();
 
-const dbURI = process.env.MONGO_URL;
+const dbURI = MONGO_URL;
 
 mongoose
   .connect(dbURI)
