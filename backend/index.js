@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const nodemailer = require("nodemailer");
 
 const MONGO_URL =
-  "mongodb+srv://mdinesh3026:04ZkCRr7o97FZioK@cluster0.kmvan50.mongodb.net/hotel_booking?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://mdinesh3026:04ZkCRr7o97FZioK@cluster0.kmvan50.mongodb.net/hotel_booking?retryWrites=true&w=majority";
 const PORT = 8000;
 
 const app = express();
