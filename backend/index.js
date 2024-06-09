@@ -83,12 +83,13 @@ app.post("/login", async (req, res) => {
 //Display Employees
 app.get("/", async (req, res) => {
   const username = await User.findOne();
-  res.send(username);
+  //res.send(username);
 });
 
 //Display Rooms
 app.get("/rooms", async (req, res) => {
   const roomDetails = await Room.find();
+  console.log("Nithin");
   res.status(200).send(roomDetails);
 });
 
