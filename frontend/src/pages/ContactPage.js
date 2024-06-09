@@ -19,7 +19,7 @@ export default function Contact() {
 
   const submitBtn = async (event) => {
     event.preventDefault();
-    const url = "https://node-js-ten-delta.vercel.app/queries";
+    const url = "https://backend-deploy-api.vercel.app/queries";
     const userDetails = {
       name,
       email,
@@ -37,6 +37,10 @@ export default function Contact() {
     const response = await fetch(url, options);
     if (response.ok) {
       console.log("sucess");
+      setName("");
+      setEmail("");
+      setSubject("");
+      SetMessage("");
     } else console.log("NOT");
   };
 

@@ -25,7 +25,7 @@ const Login = () => {
     event.preventDefault();
     const userDetails = { username, password };
     console.log(userDetails);
-    const url = "https://node-js-ten-delta.vercel.app/login";
+    const url = "https://backend-deploy-api.vercel.app/login";
     const options = {
       method: "POST",
       headers: {

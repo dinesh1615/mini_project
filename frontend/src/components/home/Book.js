@@ -20,7 +20,7 @@ export default function Book() {
       body: JSON.stringify(data),
     };
     const response = await fetch(
-      "https://node-js-ten-delta.vercel.app/rooms/",
+      "https://backend-deploy-api.vercel.app/rooms/",
       options
     );
     if (response.ok) {
