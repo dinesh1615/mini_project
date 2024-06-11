@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { footerContact, footerItem, socialIcons } from "../data/Data";
-import Newsletter from "../home/Newsletter";
+//import Newsletter from "../home/Newsletter";
 
 export default function Footer() {
   return (
@@ -30,9 +30,9 @@ export default function Footer() {
               ))}
               <div className="d-flex pt-2">
                 {socialIcons.slice(0, 4).map((val, index) => (
-                  <a className="btn btn-outline-light btn-social" href="">
+                  <button className="btn btn-outline-light btn-social" key={index} onClick={() => window.location.href = val.url}>
                     {val.icon}
-                  </a>
+                  </button>
                 ))}
               </div>
             </div>
@@ -44,9 +44,9 @@ export default function Footer() {
                       {section.header}
                     </h6>
                     {section.UnitItem.map((item, itemIndex) => (
-                      <a className="btn btn-link" href="" key={itemIndex}>
+                      <button className="btn btn-link" key={itemIndex} onClick={() => window.location.href = item.url}>
                         {item.name}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 ))}

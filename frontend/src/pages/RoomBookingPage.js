@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./index.css";
 
@@ -15,7 +15,7 @@ const RoomBooking = () => {
     ? parseFloat(location.state.price.replace(/[^0-9.-]+/g, ""))
     : 100; // Extract numeric value
 
-  const calculatePrice = () => {
+  const calculatePrice = useCallback(() => {
     if (fromDate && toDate) {
       const from = new Date(fromDate);
       const to = new Date(toDate);
@@ -23,11 +23,11 @@ const RoomBooking = () => {
       const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
       setPrice((daysDiff + 1) * roomRate);
     }
-  };
+  }, [fromDate, toDate, roomRate]);
 
   useEffect(() => {
     calculatePrice();
-  }, [fromDate, toDate]);
+  }, [fromDate, toDate, calculatePrice]);
 
   const changeFromDate = (event) => {
     setFromDate(event.target.value);

@@ -9,7 +9,7 @@ import {
   ProductInfo,
   ProductDesc,
   ProductPrice,
-  ProductButton,
+  //ProductButton,
 } from "./ProductsElements";
 
 const Products = ({ heading, data }) => {
